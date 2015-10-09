@@ -9,7 +9,9 @@ import android.view.View;
 import android.widget.Button;
 
 import com.algo.ygntrain.Adapter.MyRecyclerAdapter;
+import com.algo.ygntrain.Model.StationItem;
 import com.algo.ygntrain.R;
+import com.algo.ygntrain.provider.StationItem_RealmHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,7 +24,7 @@ public class StationListActivity extends ActionBarActivity implements View.OnCli
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    List<String> datalist;
+    List<StationItem> datalist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,9 +36,17 @@ public class StationListActivity extends ActionBarActivity implements View.OnCli
         mRecyclerView.setHasFixedSize(true);
 
         datalist = new ArrayList<>();
-        datalist.add("one");
-        datalist.add("two");
-        datalist.add("three");
+
+        StationItem_RealmHelper stationHelper = StationItem_RealmHelper.getInstance(this);
+        datalist = stationHelper.getStationList();
+
+        if(datalist.size() <= 0) {
+            addHardCodeDataToRealm();
+            datalist = stationHelper.getStationList();
+        }
+
+
+
         // use a linear layout manager
         mLayoutManager = new LinearLayoutManager(this);
         mRecyclerView.setLayoutManager(mLayoutManager);
@@ -51,6 +61,18 @@ public class StationListActivity extends ActionBarActivity implements View.OnCli
     public void onClick(View view) {
         startActivity(new Intent(StationListActivity.this,MainActivity.class));
         finish();
+    }
+
+    public void addHardCodeDataToRealm(){
+
+        StationItem_RealmHelper stationHelper = StationItem_RealmHelper.getInstance(this);
+
+        //stationHelper.deleteAllStationList();
+
+        stationHelper.upsertStation(new StationItem("KaMarYut", "KaMaYut"));
+        stationHelper.upsertStation(new StationItem("HlalDan", "KaMayut"));
+        stationHelper.upsertStation(new StationItem("ALoneLan", "Yangon"));
+        stationHelper.upsertStation(new StationItem("PyayLan", "Dagon"));
     }
 
 }

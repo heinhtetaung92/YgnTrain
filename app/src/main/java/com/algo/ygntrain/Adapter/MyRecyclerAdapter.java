@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.algo.ygntrain.Model.StationItem;
 import com.algo.ygntrain.R;
 
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
  */
 public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.ViewHolder> {
 
-    private List<String> data;
+    private List<StationItem> data;
 
     public MyRecyclerAdapter() {
 
@@ -31,20 +32,20 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
-        final String name = data.get(i);
 
-        viewHolder.tv_stationName.setText(data.get(i));
+
+        viewHolder.tv_stationName.setText(data.get(i).get_name());
         viewHolder.tv_stationName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
             }
         });
 
-        viewHolder.tv_stationDistrict.setText("Footer: " + data.get(i));
+        viewHolder.tv_stationDistrict.setText(data.get(i).get_district());
     }
 
 
-    public MyRecyclerAdapter(List<String> mydata){
+    public MyRecyclerAdapter(List<StationItem> mydata){
         data = mydata;
 
     }

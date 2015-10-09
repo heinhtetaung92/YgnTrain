@@ -1,16 +1,15 @@
-package com.algo.ygntrain;
+package com.algo.ygntrain.ui.activity;
 
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.AttributeSet;
 import android.view.View;
 import android.widget.Button;
 
 import com.algo.ygntrain.Adapter.MyRecyclerAdapter;
+import com.algo.ygntrain.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +17,7 @@ import java.util.List;
 /**
  * Created by winthanhtike on 10/9/15.
  */
-public class ShowList extends ActionBarActivity implements View.OnClickListener {
+public class StationListActivity extends ActionBarActivity implements View.OnClickListener {
     private Button btn_showmap;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
@@ -50,7 +49,7 @@ public class ShowList extends ActionBarActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View view) {
-        startActivity(new Intent(ShowList.this,MainActivity.class));
+        startActivity(new Intent(StationListActivity.this,MainActivity.class));
         finish();
     }
 

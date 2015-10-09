@@ -1,14 +1,15 @@
-package com.algo.ygntrain;
+package com.algo.ygntrain.ui.activity;
 
 import android.support.v7.app.ActionBarActivity;
 
 import android.content.Intent;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+import com.algo.ygntrain.R;
 
 
 public class MainActivity extends ActionBarActivity implements View.OnClickListener {
@@ -45,7 +46,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     }
     @Override
     public void onClick(View view) {
-        startActivity(new Intent(MainActivity.this,ShowList.class));
+        startActivity(new Intent(MainActivity.this,StationListActivity.class));
         finish();
     }
 }

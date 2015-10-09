@@ -4,12 +4,10 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AutoCompleteTextView;
 import android.widget.TextView;
 
 import com.algo.ygntrain.R;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,9 +32,15 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         final String name = data.get(i);
-        viewHolder.txHeader.setText(data.get(i));
 
-        viewHolder.txFooter.setText("Footer: " + data.get(i));
+        viewHolder.tv_stationName.setText(data.get(i));
+        viewHolder.tv_stationName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            }
+        });
+
+        viewHolder.tv_stationDistrict.setText("Footer: " + data.get(i));
     }
 
 
@@ -52,12 +56,12 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder{
 
-        private TextView txHeader,txFooter;
+        private TextView tv_stationName, tv_stationDistrict;
 
         public ViewHolder(View itemView) {
             super(itemView);
-            txHeader = (TextView)itemView.findViewById(R.id.firstLine);
-            txFooter = (TextView)itemView.findViewById(R.id.secondLine);
+            tv_stationName = (TextView)itemView.findViewById(R.id.station_name);
+            tv_stationDistrict = (TextView)itemView.findViewById(R.id.station_district);
         }
     }
 }

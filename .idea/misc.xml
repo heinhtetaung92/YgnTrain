@@ -4,6 +4,11 @@
   <component name="EntryPointsManager">
     <entry_points version="2.0" />
   </component>
+=======
+<<<<<<< HEAD
+  <component name="EntryPointsManager">
+    <entry_points version="2.0" />
+  </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
       <profile-state>
@@ -23,6 +28,7 @@
   </component>
 =======
 >>>>>>> 7fbfbb12260b83e7ae29fe1071fed82731450c52
+>>>>>>> 7a5092d5644cc70519f2fea4a4757806e4e73a2d
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />

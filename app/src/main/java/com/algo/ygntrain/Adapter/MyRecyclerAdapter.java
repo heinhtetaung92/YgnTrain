@@ -32,27 +32,17 @@ public class MyRecyclerAdapter extends RecyclerView.Adapter<MyRecyclerAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder viewHolder, int i) {
         final String name = data.get(i);
+
         viewHolder.tv_stationName.setText(data.get(i));
         viewHolder.tv_stationName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                remove(name);
             }
         });
 
         viewHolder.tv_stationDistrict.setText("Footer: " + data.get(i));
     }
 
-    public void remove(String item){
-        int position = data.indexOf(item);
-        data.remove(position);
-        notifyItemRemoved(position);
-    }
-
-    public void add(int position,String item){
-        data.add(position, item);
-        notifyItemInserted(position);
-    }
 
     public MyRecyclerAdapter(List<String> mydata){
         data = mydata;

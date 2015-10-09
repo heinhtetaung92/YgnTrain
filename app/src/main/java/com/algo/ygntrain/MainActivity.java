@@ -1,17 +1,25 @@
 package com.algo.ygntrain;
 
 import android.support.v7.app.ActionBarActivity;
+
+import android.content.Intent;
+import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
-public class MainActivity extends ActionBarActivity {
-
+public class MainActivity extends ActionBarActivity implements View.OnClickListener {
+    private Button btn_showlist;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        btn_showlist = (Button)findViewById(R.id.btn_showlist);
+        btn_showlist.setOnClickListener(this);
     }
 
     @Override
@@ -34,5 +42,10 @@ public class MainActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    @Override
+    public void onClick(View view) {
+        startActivity(new Intent(MainActivity.this,ShowList.class));
+        finish();
     }
 }

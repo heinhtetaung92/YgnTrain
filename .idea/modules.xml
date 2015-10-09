@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/YgnTrain-master.iml" filepath="$PROJECT_DIR$/YgnTrain-master.iml" />
+=======
       <module fileurl="file://$PROJECT_DIR$/YgnTrain.iml" filepath="$PROJECT_DIR$/YgnTrain.iml" />
+>>>>>>> 7fbfbb12260b83e7ae29fe1071fed82731450c52
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

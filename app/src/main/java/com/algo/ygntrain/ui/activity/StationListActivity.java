@@ -1,10 +1,14 @@
 package com.algo.ygntrain.ui.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -24,6 +28,7 @@ public class StationListActivity extends ActionBarActivity implements View.OnCli
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
+    Toolbar toolbar;
     List<StationItem> datalist;
 
     @Override
@@ -34,6 +39,10 @@ public class StationListActivity extends ActionBarActivity implements View.OnCli
         btn_showmap.setOnClickListener(this);
         mRecyclerView =(RecyclerView)findViewById(R.id.recyclerview);
         mRecyclerView.setHasFixedSize(true);
+
+        toolbar = (Toolbar)findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
 
         datalist = new ArrayList<>();
 
@@ -52,16 +61,16 @@ public class StationListActivity extends ActionBarActivity implements View.OnCli
         mRecyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        mAdapter = new MyRecyclerAdapter(datalist);
+        mAdapter = new MyRecyclerAdapter(this, datalist);
         mRecyclerView.setAdapter(mAdapter);
 
     }
 
     @Override
     public void onClick(View view) {
-        startActivity(new Intent(StationListActivity.this,MainActivity.class));
-        finish();
+        startActivity(new Intent(StationListActivity.this, MainActivity.class));
     }
+
 
     public void addHardCodeDataToRealm(){
 
@@ -73,6 +82,11 @@ public class StationListActivity extends ActionBarActivity implements View.OnCli
         stationHelper.upsertStation(new StationItem("HlalDan", "KaMayut"));
         stationHelper.upsertStation(new StationItem("ALoneLan", "Yangon"));
         stationHelper.upsertStation(new StationItem("PyayLan", "Dagon"));
+
+        stationHelper.upsertStation(new StationItem("KaMarYut1", "KaMaYut1"));
+        stationHelper.upsertStation(new StationItem("HlalDan1", "KaMayut1"));
+        stationHelper.upsertStation(new StationItem("ALoneLan1", "Yangon1"));
+        stationHelper.upsertStation(new StationItem("PyayLan1", "Dagon1"));
     }
 
 }

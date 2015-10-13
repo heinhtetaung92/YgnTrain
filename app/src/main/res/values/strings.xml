@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">YgnTrain</string>
     <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
     <string name="show_list">Show In List</string>
     <string name="show_map">Show In Map</string>
+    <string name="title_activity_yangon__hlawgar">Yangon Hlawgar</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

@@ -12,7 +12,6 @@ public class StationItem extends RealmObject{
 
     @PrimaryKey
     private int _id;
-
     private String _name;
     private String _district;
 

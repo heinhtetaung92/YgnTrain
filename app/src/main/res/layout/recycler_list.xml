@@ -8,7 +8,6 @@
         android:id="@+id/icon"
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentTop="true"
         android:src="@drawable/trainicon"/>
 
@@ -29,5 +28,12 @@
         android:textSize="18sp"
         android:layout_below="@id/station_name"
         android:layout_toRightOf="@id/icon"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.5dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/icon"
+        android:background="@android:color/black" />
 
 </RelativeLayout>
